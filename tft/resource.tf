@@ -1,18 +1,8 @@
 resource "aws_instance" "web" {
-  ami           = "ami-0fb653ca2d3203ac1"
-  instance_type = "t2.micro"
-  count = 2
+  ami           = var.ec2_ubuntu_ami
+  instance_type = var.ec2_instance_type
   tags = {
     Name = "iaac"
-  }
-}
-
-resource "aws_s3_bucket" "b" {
-  bucket = "yve-tf-test-bucket"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
   }
 }
 
