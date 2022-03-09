@@ -1,5 +1,5 @@
 provider "aws" {
-region = "ap-south-1"
+region = "us-east-2"
 shared_credentials_files =["/home/yvette/.aws/creds"]
 profile = "yvesprofile"
 }
@@ -10,6 +10,6 @@ vpc_tenancy = "default"
 }
 module "my_ec2" {
 source = "../module/ec2"
-ec2_ami = "ami-0851b76e8b1bce90b"
+ec2_ami = "ami-0fb653ca2d3203ac1"
 ec2_instance = "t2.micro"
 }
