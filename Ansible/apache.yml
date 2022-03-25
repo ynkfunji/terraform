@@ -1,0 +1,10 @@
+---
+- hosts: appb
+  become: yes
+  tasks:
+    - name: ensure apache is at the latest version
+      yum: name=httpd state=present
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
